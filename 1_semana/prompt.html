@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>✅ENTRADA PARA USUARIO DESDE EL NAV</h1>
+    <h2>❌ NO DESDE LA TERMINAL, NO CON NODE.JS</h2>
+    <div id="resultado"></div>
+    <script>
+        const numero1  = prompt('Digite un numero: ')
+        console.log(numero1)
+        console.log(typeof numero1) //string
+        numero = parseInt(numero1)
+        console.log(typeof numero) //number
+        let resultado
+        if(numero == 0){
+            console.log('El numero digitado es 0️⃣')
+            resultado = 'El numero digitado es 0️⃣'
+        }
+            else if(numero < '0') {
+                console.log('El numero digitado es Negativo ➖')
+                resultado = 'El numero digitado es Negativo ➖'
+            }
+        else {
+            console.log('El numero digitado es Positivo ➕ ')
+            resultado = 'El numero digitado es Positivo ➕ '
+        }
+
+        // <div id="resultado"></div>
+        const div = document.getElementById('resultado')
+        div.innerText = resultado
+
+
+    </script>
+</body>
+</html>

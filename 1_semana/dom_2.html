@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click on me </button>
+    <script>
+        const btn = document.getElementById('btn')
+        const num = 4
+        console.log('imprimiendo el btn oyente', btn)
+
+        btn.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'red'
+            console.log('hemos cambiado el bg del body')
+        })
+    </script>
+</body>
+</html>

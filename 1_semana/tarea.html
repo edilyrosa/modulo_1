@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes bounceY{
+
+            0%, 100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(50px);
+                
+            }
+        }
+
+
+        #circulo{
+            animation:  bounceY 1s infinite ease-in-out;
+            background-color: red;
+            border-radius: 50%;
+            transition: width 0.5s, height 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular el area y dibujar el circulo 🔴</h1>
+    <button id="btnRadio"> Ingresar radio </button>
+    <p> Area: <span id="areaValor"></span></p>
+    <div id="circulo"></div>
+
+    <script>
+        const  btnRadio = document.getElementById('btnRadio')
+        const  areaSpan = document.getElementById('areaValor')
+        const  circleDiv = document.getElementById('circulo')
+
+        function pedirRadio(){
+            let radioStr = prompt('Ingrese el radio de la circunferencia', '50')
+            let radio  = parseFloat(radioStr)
+            const area  = Math.PI * radio * radio
+            areaSpan.textContent = area.toFixed(2)
+            console.log(area )
+            
+            const diametro  = radio * 2
+            circleDiv.style.width = diametro + 'px'
+            circleDiv.style.height = diametro + 'px'
+
+        }
+
+        btnRadio.addEventListener('click', pedirRadio)
+
+    </script>
+</body>
+</html>
