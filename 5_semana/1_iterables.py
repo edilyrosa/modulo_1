@@ -56,6 +56,7 @@ print(mi_lista_filtrada)
 
 #& 💡HACIENDOLO COMPACTO CON LIST COMPREHENSION.
 mi_lista_filtrada_comp = [e for e in mi_lista if e %2 == 0]
+mi_tupla_filtrada_comp_generador = (e for e in mi_lista if e %2 == 0)
 mi_tupla_filtrada_comp_generador = set(e for e in mi_lista if e %2 == 0)
 print(mi_lista_filtrada_comp)
 print(mi_tupla_filtrada_comp_generador)

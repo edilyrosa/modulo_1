@@ -6,9 +6,13 @@
 # Se crean entre corchetes {} o con el constructor.
 
 #? ⭐ Creación:
-s = {1, 2, 3}               # literal
-s = set([1, 2, 3, 3])       # desde iterable (los duplicados se eliminan)
-s = set(range(5))           # desde cualquier iterable
+set1 = {1, 2, 3, 3}               # literal
+set2 = set([1, 2, 3, 3, 5, 5, 5])       # desde iterable (los duplicados se eliminan)
+set3 = set(range(5))           # desde cualquier iterable
+
+print(type(set1))
+print(set2)
+print(set3) #{ 0, 1, 2, 3, 4}
 
 #? ⭐ Propiedades y operaciones comunes:
 #   - Añadir: s.add(x)
@@ -23,25 +27,24 @@ s = set(range(5))           # desde cualquier iterable
 #   - Subconjunto/sobconjunto: s.issubset(t), s.issuperset(t)
 #   - Disjuntos: s.isdisjoint(t)
 
-#? Ejemplos:
+#? ejemplos
 s1 = {1, 2, 2, 3}
 s2 = set([3, 4, 5])
-print('💡Set (duplicados eliminados):', s1)
-
-print('UNION DE SETS')
+# union
 union = s1 | s2
-union_metodo = s1.union(s2)
-print('💡s1 union s2:', union) # {1, 2, 3, 4, 5}
-print('💡s1 union s2 con metodo:', union)
+union2 = s1.union(s2) #{1, 2, 3, 4, 5}
+print(union)
+print(union2)
 
-print('INTERSECION DE SETS')
-intersection = s1 & s2
-intersecion_metodo = s1.intersection(s2)
-print('💡s1 interseccion s2:', intersection) # {3}
-print('💡s1 interseccion s2 con metodo:', intersecion_metodo)
+intersec = s1 & s2
+intersec2 = s1.intersection(s2)
+print(intersec)
+print(intersec2) #{3}
 
-print('DIFERENCIA DE SETS')
-diferencia = s1 - s2
-difencia_metodo = s1.difference(s2)
-print('💡s1 diferencia s2:', diferencia) # {1, 2}
-print('💡s1 diferencia s2:', difencia_metodo)
+dif = s1 - s2
+dif2 = s1.difference(s2)
+print(dif)
+print(dif2) #{1,2}
+
+s1.add(8) 
+print(s1) #{8, 1, 2, 3}
