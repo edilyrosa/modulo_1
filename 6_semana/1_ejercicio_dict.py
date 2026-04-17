@@ -7,6 +7,12 @@ st.title('Garficas desder listas para crear un DataFrame')
 categorias = st.text_input('Digita las categorias, separadas por coma:', 'Ana, Luis, Carlos, Maria' )
 datos = st.text_input('Digita los DATOS, separadas por coma:', '18, 15, 12, 20' )
 
+with st.expander('Opciones de graficos'):
+    tipo_grafico = st.selectbox(
+        'Elige el tipo de grafico',
+        ('Lineal', 'Dispercion', 'Barras V', 'Barras H', )
+    )
+
 if st.button('Generar Grafico'):
     #* CASTING
     # √ categorias → str a lista de strs → 'Ana, Luis, Carlos, Maria' → ['Ana', 'Luis', 'Carlos', 'Maria']
@@ -23,11 +29,22 @@ if st.button('Generar Grafico'):
     
     st.write('📊DataFrame Generado')
     #TODO if st.select_slider('bar', 'barh'....):
+
+    
+    
     fig, ax = plt.subplots()
-    ax.plot(df['Categorias'], df['Datos'])
-    ax.scatter(df['Categorias'], df['Datos'], color='Red')
-    ax.bar(df['Categorias'], df['Datos'], color='Red')
-    ax.barh(df['Categorias'], df['Datos'], color='Red')
+    if tipo_grafico == 'Lineal':
+        ax.plot(df['Categorias'], df['Datos'])
+    elif tipo_grafico == 'Dispercion':
+        ax.scatter(df['Categorias'], df['Datos'], color='Red')
+    
+    elif tipo_grafico == 'Barras V':
+        ax.bar(df['Categorias'], df['Datos'], color='Red')
+    
+    elif tipo_grafico == 'Barras H':
+        ax.barh(df['Categorias'], df['Datos'], color='Red')
+    
+    #TODO: Dibujar según la selección del usuario
     
     ax.set_title('Grafico de datos')
     ax.set_xlabel('Categorias')
